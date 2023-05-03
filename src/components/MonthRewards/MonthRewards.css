@@ -1,0 +1,16 @@
+.reward-app_customer_month {
+    margin: 10px auto 0;
+}
+
+.transaction-id {
+    width: 30%;
+}
+.purchase-time {
+    width: 40%;
+}
+.purchase-money {
+    width: 20%;
+}
+.reward {
+    width: 10%;
+}
