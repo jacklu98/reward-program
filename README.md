@@ -1,4 +1,9 @@
-# Reward Program App Introduction:
+# Reward Program App 
+
+View the web app: [https://reward-program-jack.netlify.app/](https://reward-program-jack.netlify.app/)
+
+## Introduction:
+
 This reward program will present one customer total rewards and his monthly transaction history and rewards in the table.
 
 In the beginning, the users need to select one customer and multi-select transaction months they would like to see on the top of page.
@@ -6,7 +11,6 @@ In the beginning, the users need to select one customer and multi-select transac
 After selecting information, the center of the page will show customer's total rewards and his transaction records in a table for every selected months.
 For every selected month presentation, it will tell the month of year and month rewards, then in the below table, there are records of transaction 
 containing Transaction ID, Purchase Time, Purchase Money and this transaction Reward. 
-
 
 ## Available Scripts
 
