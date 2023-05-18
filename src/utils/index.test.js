@@ -1,4 +1,4 @@
-import { calculateReward, findTimePeriod, calculateTotalRewards, sortTimePeriodFromLatest } from './index';
+import { calculateReward, findTimePeriod, calculateTotalRewards, sortTimePeriodFromLatest, convertMMYYYYToYYYYMM, convertYYYYMMToMMYYYY } from './index';
 
 test('there is no reward for purchase money equal or less than 50 ', () => {
     const transaction = {
@@ -204,4 +204,16 @@ test('should sort month array start from latest', () => {
     expect(sortedTimePeriod[2]).toBe("May 2022");
     expect(sortedTimePeriod[3]).toBe("March 2022");
     expect(sortedTimePeriod[4]).toBe("April 2021");
+})
+
+test('should convert format from MM YYYY to YYYY-MM', () => {
+    const MMYYYY = 'March 2023';
+    const YYYYMM = convertMMYYYYToYYYYMM(MMYYYY);
+    expect(YYYYMM).toBe('2023-03');
+})
+
+test('should convert format from YYYY-MM to MM YYYY', () => {
+    const YYYYMM = '2023-01';
+    const MMYYYY = convertYYYYMMToMMYYYY(YYYYMM);
+    expect(MMYYYY).toBe('January 2023');
 })

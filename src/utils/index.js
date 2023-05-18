@@ -42,8 +42,8 @@ const monthMap = [
 export function findTimePeriod(transactions) {
     const months = new Set();
     transactions.forEach(transaction => {
-        const date = transaction.purchaseTime.split(' ');
-        const month = date[1] + " " + date[2];
+        const time = transaction.purchaseTime.split(' ');
+        const month = time[1] + " " + time[2];
         if (!months.has(month)) {
             months.add(month)
         }
@@ -51,9 +51,32 @@ export function findTimePeriod(transactions) {
     return sortTimePeriodFromLatest([...months]);
 }
 
+export function convertMMYYYYToYYYYMM(MMYYYY) {
+    if(!MMYYYY) return '';
+    const time = MMYYYY.split(' ');
+    const year = time[1];
+    let month = monthMap.indexOf(time[0]) + 1;
+    if(month > -1 && month < 10) return year + "-0" + month;
+    return year + "-" + month;
+}
+
+export function convertYYYYMMToMMYYYY(YYYYMM) {
+    if(!YYYYMM) return '';
+    const time = YYYYMM.split('-');
+    const year = time[0];
+    let month = monthMap[Number(time[1]) - 1];
+    return month + " " + year;
+}
+
+export function getPurchaseDate(purchaseTime) {
+    const time = purchaseTime.split(' ');
+    const date = time[0] + " " + time[1] + " " + time[2];
+    return date;
+}
+
 export function getMonthFromDate(purchaseTime) {
-    const date = purchaseTime.split(' ');
-    const month = date[1] + " " + date[2];
+    const time = purchaseTime.split(' ');
+    const month = time[1] + " " + time[2];
     return month;
 }
 
