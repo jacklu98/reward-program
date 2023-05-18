@@ -20,13 +20,15 @@
     border: 1px black solid;
     background-color: white;
     width: 200px;
-    height: 20%;
+    height: 12%;
     padding: 3px;
     text-align: left;
     font-size: 1rem;
+    overflow: auto;
 }
 
 .reward-app_search_related-customer:hover {
+    font-weight: bold;
     background-color: grey;
 }
 
