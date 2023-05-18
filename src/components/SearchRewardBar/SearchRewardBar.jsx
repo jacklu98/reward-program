@@ -15,49 +15,49 @@ export default function SearchCustomer({customers, setSelectedCustomer, timePeri
     }, [timePeriod])
     
     useEffect(() => {
-        if (searchQuery === "") {
-          setRelatedCustomers(customers);
-          return;
-        }
-        const potentialResults = customers.filter((customer) => {
-            return customer.startsWith(searchQuery);
-        });
-        setRelatedCustomers(potentialResults);
-      }, [searchQuery, customers]);
+      if (searchQuery === "") {
+        setRelatedCustomers(customers);
+        return;
+      }
+      const potentialResults = customers.filter((customer) => {
+          return customer.startsWith(searchQuery);
+      });
+      setRelatedCustomers(potentialResults);
+    }, [searchQuery, customers]);
     
-      function handleFocus() {
-        setIsCustomerSelected(false);
-      }
+    function handleFocus() {
+      setIsCustomerSelected(false);
+    }
 
-      function handleInput(event) {
-        setIsCustomerSelected(false);
-        setSearchQuery(event.target.value);
-      }
-    
-      function handleItemClick(customerID) {
-        setIsCustomerSelected(true);
-        setSearchQuery(customerID);
-      }
+    function handleInput(event) {
+      setIsCustomerSelected(false);
+      setSearchQuery(event.target.value);
+    }
+  
+    function handleItemClick(customerID) {
+      setIsCustomerSelected(true);
+      setSearchQuery(customerID);
+    }
 
-      function handleSearchReward() {
-        if(!customers.includes(searchQuery)) {
-          setSelectedCustomer("");
-        } else {
-          setSelectedCustomer(searchQuery);
-        }
-        const startMonthIndex = timePeriod.indexOf(convertYYYYMMToMMYYYY(startMonth));
-        const endMonthIndex = timePeriod.indexOf(convertYYYYMMToMMYYYY(endMonth));
-        const selectedMonths = timePeriod.slice(endMonthIndex, startMonthIndex + 1);
-        setSelectedMonths(selectedMonths);
+    function handleSearchReward() {
+      if(!customers.includes(searchQuery)) {
+        setSelectedCustomer("");
+      } else {
+        setSelectedCustomer(searchQuery);
       }
+      const startMonthIndex = timePeriod.indexOf(convertYYYYMMToMMYYYY(startMonth));
+      const endMonthIndex = timePeriod.indexOf(convertYYYYMMToMMYYYY(endMonth));
+      const selectedMonths = timePeriod.slice(endMonthIndex, startMonthIndex + 1);
+      setSelectedMonths(selectedMonths);
+    }
 
-      function handleStartMonth(event) {
-        setStartMonth(event.target.value);
-      }
+    function handleStartMonth(event) {
+      setStartMonth(event.target.value);
+    }
 
-      function handleEndMonth(event) {
-        setEndMonth(event.target.value);
-      }
+    function handleEndMonth(event) {
+      setEndMonth(event.target.value);
+    }
 
     return (
         <div className="reward-app_search">

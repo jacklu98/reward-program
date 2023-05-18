@@ -12,6 +12,7 @@ describe('SearchRewardBar', () => {
         const inputElements = searchRewardBar.getAllByTestId("reward-app_search_search-bar");
         expect(inputElements).toHaveLength(3);
     });
+
     it('should render auto complete for customer input', () => {
         const customers = ['A2BS4F', 'CB1S11', 'T367KB', 'T8JF91', 'T8R11E'];
         const timePeriod = ['April 2023', 'March 2023', 'February 2023'];
@@ -28,6 +29,7 @@ describe('SearchRewardBar', () => {
         act(() => fireEvent.click(potentialSearchResults[0]));
         expect(customerInput.value).toBe('A2BS4F');
     });
+    
     it('should trigger callback function after clicking search button', () => {
         const customers = ['A2BS4F', 'CB1S11', 'T367KB', 'T8JF91', 'T8R11E'];
         const timePeriod = ['April 2023', 'March 2023', 'February 2023'];

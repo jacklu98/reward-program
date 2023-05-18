@@ -30,7 +30,6 @@ export default function CustomerRewards({transactions, customerId, timePeriod}) 
                 <span>{`Name: ${transactions[0].customerName}`}</span>
                 <span>{`Total Rewards: ${totalRewards}`}</span>
             </header>
-            
             {timePeriod.map((month)=>{
                 return (
                     <MonthRewards key={month} month={month} transactions={records[month]}/>

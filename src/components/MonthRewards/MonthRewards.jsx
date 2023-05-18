@@ -13,32 +13,30 @@ export default function MonthRewards({transactions, month}) {
                 <span className="">{`Month: ${month}`}</span>
                 <span>{`Month Rewards: ${totalRewards}`}</span>
             </header>
-            {transactions.length !== 0 ? 
-                (<table className="reward-app_customer_month_table">
-                    <thead>
-                        <tr>
-                            <th>Transaction ID</th>
-                            <th>Purchase Date</th>
-                            <th>Pay Amount</th>                            
-                            <th>Reward</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            transactions.map(transaction => {
-                                return(
-                                    <tr key={transaction.transactionId} data-testid="table_transaction">
-                                        <td className="transaction-id">{transaction.transactionId}</td>
-                                        <td className="purchase-time">{getPurchaseDate(transaction.purchaseTime)}</td>
-                                        <td className="purchase-money">{transaction.currency + transaction.purchaseMoney}</td>
-                                        <td className="reward">{transaction.reward}</td>
-                                    </tr>
-                                )
-                            })
-                        }
-                    </tbody>
-                </table>) : <div className="error-message">No Transaction History</div>
-            }
+            <table className="reward-app_customer_month_table">
+                <thead>
+                    <tr>
+                        <th>Transaction ID</th>
+                        <th>Purchase Date</th>
+                        <th>Pay Amount</th>                            
+                        <th>Reward</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        transactions.map(transaction => {
+                            return(
+                                <tr key={transaction.transactionId} data-testid="table_transaction">
+                                    <td className="transaction-id">{transaction.transactionId}</td>
+                                    <td className="purchase-time">{getPurchaseDate(transaction.purchaseTime)}</td>
+                                    <td className="purchase-money">{transaction.currency + transaction.purchaseMoney}</td>
+                                    <td className="reward">{transaction.reward}</td>
+                                </tr>
+                            )
+                        })
+                    }
+                </tbody>
+            </table>
         </div>
     )
 }

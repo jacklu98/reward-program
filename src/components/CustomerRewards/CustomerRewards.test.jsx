@@ -165,6 +165,7 @@ describe('MonthRewards', () => {
         const totalRewardsElement = customerRewards.queryByText('Total Rewards: 3134');
         expect(totalRewardsElement).toBeInTheDocument();
     });
+    
     it('should render available rewards table for every month in time period', () => {
         const timePeriod = ["April 2023", "March 2023", "February 2023"];
         const transactions = [

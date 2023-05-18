@@ -5,12 +5,15 @@
 .transaction-id {
     width: 50%;
 }
+
 .purchase-time {
     width: 20%;
 }
+
 .purchase-money {
     width: 17%;
 }
+
 .reward {
     width: 12%;
 }
