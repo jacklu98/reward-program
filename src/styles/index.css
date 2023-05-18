@@ -13,24 +13,31 @@ code {
 }
 
 .reward-app {
-  margin: 50px auto 0;
+  margin: 20px auto 0;
   text-align: center;
 }
 
 header {
   display: flex;
-  justify-content: center;
-  margin-bottom: 10px;
+  justify-content: space-between;
+  margin: 10px 50px;
 }
 
 header > span {
-  width: 200px;
-  color: #0000FF;
+  color: #18A6EB;
   font-weight: bold;
 }
 
+h1 {
+  color: #18A6EB;
+}
+
 table {
-  width: 800px;
+  width: 1000px;
+}
+
+tr {
+  height: 2em;
 }
 
 table, th, td {

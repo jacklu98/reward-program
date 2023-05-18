@@ -1,0 +1,47 @@
+.reward-app_search_label {
+    margin: auto;
+    width: 208px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.reward-app_search_search-bar {
+    width: 200px;
+    height: 20px;
+    margin: 5px 0;
+    padding: 1px 2px;
+}
+  
+.reward-app_search_related-customers {
+    position: absolute;
+    top: 137px;
+    left: 50%;
+    transform: translate(-104px);
+    border: 1px black solid;
+    background-color: white;
+    width: 200px;
+    height: 20%;
+    padding: 3px;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.reward-app_search_related-customer:hover {
+    background-color: grey;
+}
+
+.reward-app_search_btn {
+    margin: 10px auto;
+    background-color: #18A6EB;
+    color: white;
+    width: 120px;
+    height: 30px;
+    border-radius: 5px;
+    border: 0px;
+    cursor: pointer;
+}
+
+.reward-app_search_btn:hover {
+    background-color: #3C67D3;
+}
+

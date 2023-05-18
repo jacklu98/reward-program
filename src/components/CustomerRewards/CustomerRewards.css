@@ -1,13 +1,19 @@
 .reward-app_customer {
-    width: 900px;
-    margin: 50px auto 0;
+    margin: 10px auto;
+    width: 1100px;
+    padding: 20px 0;
+    border: 10px solid #18A6EB;
+    border-radius: 40px;
 }
 
 .reward-app_customer_header {
+    margin: 0 50px;
     font-size: 1.2rem;
     font-weight: bold;
+    display: flex;
+    justify-content: space-between;
 }
 
 .reward-app_customer_header > span {
-    color: red;
+    color: #3C67D3;
 }

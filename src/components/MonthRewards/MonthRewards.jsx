@@ -1,7 +1,9 @@
-import { calculateTotalRewards } from "../../utils";
+import { calculateTotalRewards, getPurchaseDate } from "../../utils";
 import './MonthRewards.css';
 
 export default function MonthRewards({transactions, month}) {
+    if(!transactions) return;
+    
     // count total rewards of month
     const totalRewards = calculateTotalRewards(transactions);
 
@@ -16,8 +18,8 @@ export default function MonthRewards({transactions, month}) {
                     <thead>
                         <tr>
                             <th>Transaction ID</th>
-                            <th>Purchase Time</th>
-                            <th>Purchase Money</th>                            
+                            <th>Purchase Date</th>
+                            <th>Pay Amount</th>                            
                             <th>Reward</th>
                         </tr>
                     </thead>
@@ -27,8 +29,8 @@ export default function MonthRewards({transactions, month}) {
                                 return(
                                     <tr key={transaction.transactionId} data-testid="table_transaction">
                                         <td className="transaction-id">{transaction.transactionId}</td>
-                                        <td className="purchase-time">{transaction.purchaseTime}</td>
-                                        <td className="purchase-money">{transaction.purchaseMoney}</td>
+                                        <td className="purchase-time">{getPurchaseDate(transaction.purchaseTime)}</td>
+                                        <td className="purchase-money">{transaction.currency + transaction.purchaseMoney}</td>
                                         <td className="reward">{transaction.reward}</td>
                                     </tr>
                                 )

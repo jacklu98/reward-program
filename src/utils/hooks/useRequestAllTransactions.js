@@ -6,8 +6,10 @@ export default function useRequestAllTransactions() {
     const [transactionsGroupByCustomer, setTransactionsGroupByCustomer] = useState({});
     const [customers, setCustomers] = useState([]);
     const [timePeriod, setTimePeriod] = useState([]);
+    const [isLoading, setIsLoading] = useState(null);
 
     useEffect(() => {
+        setIsLoading(true);
         getAllTransactions()
             .then(data => {
                 // find the month of reward time period
@@ -26,14 +28,16 @@ export default function useRequestAllTransactions() {
                         records[element.customerId] = [element];
                     }
                 });
-
+                setIsLoading(false);
                 setTransactionsGroupByCustomer(records);
                 setCustomers([...Object.keys(records)]);
-                setTimePeriod(months)
+                setTimePeriod(months);
             })
-            .catch(err => console.log(err));
+            .catch(err => {
+                setIsLoading(false);
+                console.log(err)
+            });
     }, [])
 
-    
-    return [transactionsGroupByCustomer, customers, timePeriod];
+    return [transactionsGroupByCustomer, customers, timePeriod, isLoading];
 }

@@ -3,14 +3,14 @@
 }
 
 .transaction-id {
-    width: 30%;
+    width: 50%;
 }
 .purchase-time {
-    width: 40%;
-}
-.purchase-money {
     width: 20%;
 }
+.purchase-money {
+    width: 17%;
+}
 .reward {
-    width: 10%;
+    width: 12%;
 }
