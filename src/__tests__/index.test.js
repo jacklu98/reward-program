@@ -1,4 +1,5 @@
-import { calculateReward, findTimePeriod, calculateTotalRewards, sortTimePeriodFromLatest, convertMMYYYYToYYYYMM, convertYYYYMMToMMYYYY } from './index';
+import { calculateReward, findTimePeriod, calculateTotalRewards, sortTimePeriodFromLatest, convertMMYYYYToYYYYMM, convertYYYYMMToMMYYYY } from '../utils/index';
+import '../utils/index';
 
 test('there is no reward for purchase money equal or less than 50 ', () => {
     const transaction = {
