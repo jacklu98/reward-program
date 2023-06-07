@@ -1,6 +1,6 @@
 import { render, screen, fireEvent, act } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import SearchRewardBar from '../components/SearchRewardBar/SearchRewardBar';
+import SearchRewardBar from '../../components/SearchRewardBar/SearchRewardBar';
 
 describe('SearchRewardBar', () => {
     it('should render input bar for customer and transaction period', () => {

@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import MonthRewards from '../components/MonthRewards/MonthRewards';
+import MonthRewards from '../../components/MonthRewards/MonthRewards';
 
 describe('MonthRewards', () => {
     it('should render transaction month and total reward', () => {

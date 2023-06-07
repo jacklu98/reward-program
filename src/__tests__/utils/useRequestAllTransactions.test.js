@@ -1,5 +1,5 @@
 import { renderHook } from "@testing-library/react";
-import useRequestAllTransactions from "../utils/hooks/useRequestAllTransactions";
+import useRequestAllTransactions from "../../utils/hooks/useRequestAllTransactions";
 
 describe('useRequestAllTransactions hook', () => {
     it('should render correct states', () => {
