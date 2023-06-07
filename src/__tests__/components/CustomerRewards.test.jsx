@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import CustomerRewards from '../components/CustomerRewards/CustomerRewards';
+import CustomerRewards from '../../components/CustomerRewards/CustomerRewards';
 
 describe('MonthRewards', () => {
     it('should render customer ID Name and total reward', () => {
